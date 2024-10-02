@@ -1,0 +1,42 @@
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 1rem;
+    background-color: #eee;
+    border-radius: 6px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.icons button {
+    background-color: transparent;
+    padding: 0.3rem;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.icons button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.icons img {
+    cursor: pointer;
+}
+
+.notTasks {
+    text-align: center;
+    padding: 2rem 0;
+}
