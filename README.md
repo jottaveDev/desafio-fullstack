@@ -13,6 +13,7 @@ O desafio proposto pela empressa JackExperts consiste em desenvolver uma aplica√
 
 * JavaScript
 * TypeScript
+* React
 * NodeJS
 * Express
 * SQLite
