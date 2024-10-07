@@ -6,8 +6,11 @@ type IconProps = {
 };
 const Icon = ({ src, alt, onClick }: IconProps) => {
     return (
-        <button onClick={onClick}>
-            <img src={src} alt={alt} />
+        <button
+            className="bg-transparent p-1 rounded-full duration-300 hover:bg-gray-400"
+            onClick={onClick}
+        >
+            <img className="cursor-pointer" src={src} alt={alt} />
         </button>
     );
 };

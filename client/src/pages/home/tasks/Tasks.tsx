@@ -5,7 +5,6 @@ import Trash from '../../../assets/trash.svg';
 import Icon from '../../../components/icon/Icon';
 import { ITaskProps } from '../../../models/task';
 import { DELETE_TASK } from '../../../services/tasksService';
-import styles from './tasks.module.css';
 
 type TasksProps = {
     tasks: ITaskProps[];
@@ -33,18 +32,19 @@ const Tasks = ({ tasks, setTasks }: TasksProps) => {
     };
 
     if (tasks.length === 0)
-        return <p className={styles.notTasks}>Nenhuma tarefa encontrada.</p>;
+        return <p className="text-center py-8">Nenhuma tarefa encontrada.</p>;
     return (
-        <ul>
+        <ul className="list-none flex flex-col gap-4">
             {tasks.map((task: ITaskProps) => (
                 <li
                     key={task.id}
+                    className="flex items-center justify-between max-w-full p-4 bg-gray-300 rounded"
                     style={{
                         textDecoration: `${task.status ? 'line-through' : ''}`,
                     }}
                 >
                     <p>{task.title}</p>
-                    <div className={styles.icons}>
+                    <div className="flex items-center gap-2">
                         <Icon
                             src={Edit}
                             alt="Edit icon"

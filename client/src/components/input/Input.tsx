@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import styles from './input.module.css';
 
 type InputProps = {
     type: string;
@@ -23,7 +22,7 @@ const Input = ({
 }: InputProps) => {
     return (
         <fieldset>
-            <label htmlFor={id} className={styles.label}>
+            <label htmlFor={id} className="block mb-1 text-sm font-semibold">
                 {label}
             </label>
             <input
@@ -34,7 +33,7 @@ const Input = ({
                 onChange={onChange}
                 onBlur={onBlur}
                 style={{ borderColor: `${error ? 'red' : ''}` }}
-                className={styles.input}
+                className="w-56 py-2 px-4 rounded outline-none border-solid border-gray-300 border"
             />
             {error && (
                 <p

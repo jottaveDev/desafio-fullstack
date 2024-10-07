@@ -3,7 +3,6 @@ import { BaseSyntheticEvent, FormEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getToken } from '../../../helpers/token';
 import { EDIT_TASK, GET_TASK } from '../../../services/tasksService';
-import styles from './edit.module.css';
 
 const Edit = () => {
     const [taskValue, setTaskValue] = useState('');
@@ -41,23 +40,37 @@ const Edit = () => {
     };
 
     return (
-        <main className={styles.main}>
-            <section className={styles.section}>
-                <header className={styles.header}>
-                    <h1>Editar tarefa</h1>
+        <main className="flex items-center justify-center min-h-screen flex-col">
+            <section className="min-w-96">
+                <header>
+                    <h1 className="self-start text-left text-2xl font-bold">
+                        Editar tarefa
+                    </h1>
                 </header>
-                <form onSubmit={onSubmit} className={styles.form}>
+                <form
+                    onSubmit={onSubmit}
+                    className="flex items-center gap-4 w-full py-8"
+                >
                     <input
                         type="text"
                         placeholder="Digite sua tarefa"
+                        className="w-full max-w-56 py-2 px-4 border border-solid border-gray-300 rounded outline-none"
                         value={taskValue}
                         onChange={onChange}
                     />
-                    <button type="submit" className={styles.button}>
+                    <button
+                        type="submit"
+                        className="block font-semibold p-2 cursor-pointer bg-gray-950 border-none rounded text-white text-sm duration-300 hover:opacity-80"
+                    >
                         Editar
                     </button>
                 </form>
-                <button onClick={() => navigate('/')}>Voltar</button>
+                <button
+                    className="block font-semibold p-2 cursor-pointer bg-gray-950 border-none rounded text-white text-sm duration-300 hover:opacity-80"
+                    onClick={() => navigate('/')}
+                >
+                    Voltar
+                </button>
             </section>
         </main>
     );

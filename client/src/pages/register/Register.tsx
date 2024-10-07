@@ -5,7 +5,6 @@ import Button from '../../components/button/Button';
 import Input from '../../components/input/Input';
 import useForm from '../../hooks/useForm';
 import { CREATE_USER } from '../../services/userService';
-import './register.module.css';
 
 const Register = () => {
     const email = useForm('email');
@@ -30,9 +29,9 @@ const Register = () => {
     };
 
     return (
-        <main>
-            <h1>Fazer Cadastro</h1>
-            <form onSubmit={handleSubmit}>
+        <main className="flex items-center justify-center flex-col min-h-screen">
+            <h1 className="text-3xl font-bold">Fazer Cadastro</h1>
+            <form className="flex flex-col gap-4 p-8" onSubmit={handleSubmit}>
                 <Input
                     type="email"
                     name="email"
@@ -49,9 +48,14 @@ const Register = () => {
                 />
                 <Button text="Cadastrar" />
             </form>
-            <p>
+            <p className="text-gray-950">
                 Já tem conta?{' '}
-                <a onClick={() => navigate('/login')}>Faça Login</a>
+                <a
+                    className="font-bold cursor-pointer text-inherit"
+                    onClick={() => navigate('/login')}
+                >
+                    Faça Login
+                </a>
             </p>
         </main>
     );
