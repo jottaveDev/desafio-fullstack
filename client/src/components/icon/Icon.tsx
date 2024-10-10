@@ -1,8 +1,7 @@
 type IconProps = {
     src: string;
     alt: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    onClick: any;
+    onClick: () => void;
 };
 const Icon = ({ src, alt, onClick }: IconProps) => {
     return (

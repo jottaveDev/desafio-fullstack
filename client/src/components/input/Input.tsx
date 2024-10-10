@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 type InputProps = {
     type: string;
     name: string;
@@ -7,8 +5,8 @@ type InputProps = {
     label: string;
     value: string;
     error: string;
-    onChange: any;
-    onBlur: any;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onBlur: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 const Input = ({
     type,
